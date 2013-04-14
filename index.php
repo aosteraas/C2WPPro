@@ -1,35 +1,38 @@
 <?php get_header(); ?>
 
 <div class="container">
-        <?php get_sidebar(); ?>
-      <div class="span9">
-        <!-- Download
-        ================================================== -->
-        <section id="download-bootstrap">
-          <div class="page-header">
-            <h1>1. Download</h1>
-          </div>
-          <p class="lead">Before downloading, be sure to have a code editor (we recommend <a href="http://sublimetext.com/2">Sublime Text 2</a>) and some working knowledge of HTML and CSS. We won't walk through the source files here, but they are available for download. We'll focus on getting started with the compiled Bootstrap files.</p>
-
-          <div class="row-fluid">
-            <div class="span6">
-              <h2>Download compiled</h2>
-              <p><strong>Fastest way to get started:</strong> get the master CSS file and replace your existing Bootstrap CSS file (remember to back up your old file before overwriting) No docs or original source files.</p>
-              <p><a class="btn btn-large btn-primary" href="https://github.com/littlesparkvt/flatstrap/blob/master/assets/css/bootstrap.css" >Download Bootstrap</a></p>
-            </div>
-            <div class="span6">
-              <h2>Download source</h2>
-              <p>Get the original files for all CSS and JavaScript, along with a local copy of the docs by downloading the latest version directly from GitHub.</p>
-              <p><a class="btn btn-large" href="https://github.com/littlesparkvt/flatstrap" >Download Flatstrap source</a></p>
-            </div>
-          </div>
-        </section>
-
-
-      </div>
+  <?php get_sidebar(); ?>
+  <div class="span9">
+  <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+  <section <?php post_class(); ?>>
+    <div class="page-header">
+      <h1>
+        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+      </h1>
+      <small>
+        By <?php the_author_posts_link(); ?>,
+         in <?php the_category(', '); //separated by a commma and space ?>,
+         on <?php the_time('F j, Y'); //DD Month, YYYY format dates ?>
+       </small>
     </div>
+    <?php the_excerpt(); ?>
+      <a class="btn btn-small pull-right" href="<?php the_permalink(); ?>" >Continue Reading <i class="icon-hand-right"></i></a>
+  </section>
 
-  </div><!-- closing .container -->
+  <?php endwhile; ?>
+  <!-- START PAGINATION -->
+    <section>
+      <ul class="pager">
+        <li class="previous"><?php previous_posts_link('« Previous Page') ?></li>
+        <li class="next"><?php next_posts_link('Next Page »') ?></li>
+      </ul>
+    </section>
+  <!-- END PAGINATION -->
+  <?php else: ?>
+  <!-- no posts found -->
+  <?php endif; ?>
+</div>
+
+</div>
+<!-- closing .container -->
 <?php get_footer(); ?>
-
-

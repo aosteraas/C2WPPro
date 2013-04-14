@@ -17,3 +17,10 @@ function wppro_script_enqueuer() {
 }
 add_action( 'wp_enqueue_scripts', 'wppro_script_enqueuer');
 
+function wppro_custom_excerpt_end( $more ) {
+	return '';
+	//return ''; returns nothing - this is just an example
+	//return ' <a class="btn btn-small pull-right" href="'. get_permalink( get_the_ID() ) . '">Continue Reading <i class="icon-hand-right"></i></a>';
+
+}
+add_filter('excerpt_more', 'wppro_custom_excerpt_end');
