@@ -18,11 +18,31 @@
 	margin-left: 1em;
 }
 
-.wp-caption{}
-.wp-caption-text{}
+.wp-caption{
+	background: #f2f2f2;
+	padding: 3px;
+	max-width: 100% !important;
+}
+.wp-caption img {
+	width: 100%;
+}
+/* using !important is not ideal, but large images will not be constrained otherwise*/
+.wp-caption-text{
+	margin: 5px;
+	font-style: italic;
+}
 .gallery-caption{}
+
+
+.gallery-caption {
+	font-size: .8em;
+}
 
 /*These next two do not need styling, 
 but need to be present in the stylesheet*/
 .sticky{}
 .bypostauthor{}
+
+.post p { /* stops images and headers from overlapping*/
+	display: inline-block;
+}
