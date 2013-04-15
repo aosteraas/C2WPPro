@@ -1,0 +1,28 @@
+
+/*WordPress Generated Styles*/
+
+.aligncenter{
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.alignleft{
+	display: inline;
+	float: left;
+	margin-right: 1em;
+}
+.alignright{
+	display: inline;
+	float: right;
+	margin-left: 1em;
+}
+
+.wp-caption{}
+.wp-caption-text{}
+.gallery-caption{}
+
+/*These next two do not need styling, 
+but need to be present in the stylesheet*/
+.sticky{}
+.bypostauthor{}
