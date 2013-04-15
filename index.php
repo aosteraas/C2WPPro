@@ -28,8 +28,7 @@
       </ul>
     </section>
   <!-- END PAGINATION -->
-  <?php else: ?>
-  <!-- no posts found -->
+
   <?php endif; ?>
 </div>
 
