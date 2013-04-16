@@ -29,8 +29,8 @@ function wppro_script_enqueuer() {
     wp_register_script( 'jquery-flatstrap', get_stylesheet_directory_uri().'/assets/js/jquery.js', '', '1.8.1', true );
     wp_register_script( 'collapse', get_stylesheet_directory_uri().'/assets/js/bootstrap-collapse.js', array( 'jquery-flatstrap' ), '2.3.1', true);
     //Now we enqueue them
-    wp_enqueue_script('jquery-flatstrap', get_stylesheet_directory_uri().'/assets/js/jquery.js');
-    wp_enqueue_script( 'collapse', get_stylesheet_directory_uri().'/assets/js/bootstrap-collapse.js');
+    wp_enqueue_script('jquery-flatstrap');
+    wp_enqueue_script( 'collapse');
 
 }
 add_action( 'wp_enqueue_scripts', 'wppro_script_enqueuer');
