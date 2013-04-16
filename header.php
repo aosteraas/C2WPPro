@@ -42,26 +42,10 @@
           </button>
           <a class="brand" href="<?php bloginfo( 'wpurl' ); ?>"><?php bloginfo( 'name' ); ?></a>
           <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="">
-                <a href="<?php bloginfo( 'wpurl' ); ?>">Home</a>
-              </li>
-              <li class="active">
-                <a href="./getting-started.html">Get started</a>
-              </li>
-              <li class="">
-                <a href="./scaffolding.html">Scaffolding</a>
-              </li>
-              <li class="">
-                <a href="./base-css.html">Base CSS</a>
-              </li>
-              <li class="">
-                <a href="./components.html">Components</a>
-              </li>
-              <li class="">
-                <a href="./javascript.html">JavaScript</a>
-              </li>
-            </ul>
+            <?php wp_nav_menu( array(
+              'container'       => 'false', 
+              'menu_class'      => 'nav', 
+              ) )?>
           </div>
         </div>
       </div>
