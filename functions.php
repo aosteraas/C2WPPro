@@ -4,6 +4,10 @@ Scripts
 ==================================================================*/
 
 function wppro_script_enqueuer() {
+    //////////////////////////////////////////////////////////////////////////////////////
+    ///////////// CSS
+    //////////////////////////////////////////////////////////////////////////////////////	
+
 	//first we register the styles
 	wp_register_style( 'bootstrap', get_stylesheet_directory_uri().'/assets/css/bootstrap.css');
 	wp_register_style( 'bootstrap-responsive', get_stylesheet_directory_uri().'/assets/css/bootstrap-responsive.css');
@@ -16,6 +20,17 @@ function wppro_script_enqueuer() {
     wp_enqueue_style( 'docs' );
     wp_enqueue_style( 'prettify' );
     wp_enqueue_style( 'our-css' );
+
+    //////////////////////////////////////////////////////////////////////////////////////
+    ///////////// JavaScript
+    //////////////////////////////////////////////////////////////////////////////////////
+
+    //First we register the scripts
+    wp_register_script( 'jquery-flatstrap', get_stylesheet_directory_uri().'/assets/js/jquery.js', '', '1.8.1', true );
+    wp_register_script( 'collapse', get_stylesheet_directory_uri().'/assets/js/bootstrap-collapse.js', array( 'jquery-flatstrap' ), '2.3.1', true);
+    //Now we enqueue them
+    wp_enqueue_script('jquery-flatstrap', get_stylesheet_directory_uri().'/assets/js/jquery.js');
+    wp_enqueue_script( 'collapse', get_stylesheet_directory_uri().'/assets/js/bootstrap-collapse.js');
 
 }
 add_action( 'wp_enqueue_scripts', 'wppro_script_enqueuer');
@@ -44,3 +59,8 @@ function wppro_comments($comment, $args, $depth) {
       <?php comment_text(); ?>
       <?php comment_reply_link(array_merge( $args, array('depth' =>$depth, 'max_depth' => $args['max_depth']))) ?>
 <?php }
+
+function wppro_menus() {
+  register_nav_menu('header-menu',__( 'Header Menu' ));
+}
+add_action( 'init', 'wppro_menus' );
