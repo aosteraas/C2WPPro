@@ -93,3 +93,10 @@ but need to be present in the stylesheet*/
 .children{
 	margin: 18px 0 0 0;
 }
+
+.navbar-inverse .nav .current-menu-item > a,
+.navbar-inverse .nav .current-menu-item > a:hover,
+.navbar-inverse .nav .current-menu-item > a:focus {
+  color: #ffffff;
+  background-color: #111111;
+}
