@@ -33,5 +33,5 @@
 </div>
 
 </div>
-<!-- closing .container -->
+</div><!-- closing .container -->
 <?php get_footer(); ?>
