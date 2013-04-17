@@ -127,3 +127,7 @@ but need to be present in the stylesheet*/
 	box-shadow: none;
 	-moz-box-shadow: none;
 }
+
+.search.page-header {
+	margin-bottom: 0px;
+}
