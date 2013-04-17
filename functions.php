@@ -34,7 +34,7 @@
     wp_enqueue_script( 'collapse');
 
 	}
-	
+
 	//Adding our function wppro_script_enqueuer to the action wp_enqueue_scripts
 	add_action( 'wp_enqueue_scripts', 'wppro_script_enqueuer'); 
 
@@ -93,3 +93,44 @@
 
 	//Adding our function wppro_menus to the action init
 	add_action( 'init', 'wppro_menus' );
+
+    //////////////////////////////////////////////////////////////////////////////////////
+    ///////////// Sidebars
+    //////////////////////////////////////////////////////////////////////////////////////
+	function wppro_sidebar_widgets(){
+		register_sidebar( array( 
+			'name'			=> 'Sidebar Widgets',
+			'id'			=> 'sidebar-widgets',
+			'description'	=> 'This is for widgets on the left hand side of our theme',
+			//'before_widget'	=> '', default is <li id="%1$s" class="widget %2$s">
+			//'after_widget'	=> '', default is </li>\n
+			'before_title'	=> '<h3 class="widgettitle">', //default is <h2 class="widgettitle">
+			'after_title'	=> "</h3>\n" //default is </h2>\n
+			)	
+		);
+	}
+	add_action( 'widgets_init' ,'wppro_sidebar_widgets' );
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
