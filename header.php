@@ -28,7 +28,7 @@
 
   </head>
 
-  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+  <body <?php body_class(); ?> data-spy="scroll" data-target=".bs-docs-sidebar">
 
     <!-- Navbar
     ================================================== -->
