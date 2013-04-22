@@ -35,3 +35,19 @@ By popular demand, the theme per each part of the series is available in a zip f
 - [Implement Search Into The Theme](http://www.yinpress.com/part-12-search/)
 - [Build a Helpful 404 Page](http://www.yinpress.com/part-13-your-404-page/)
 - [Couch to WP Pro Beginner Series Wrap-up](http://www.yinpress.com/couch-to-wp-pro-wrap-up/)
+
+##Copyright and License
+
+Copyright 2012 - 2013 YinPress
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+##License, simplified
+
+>The Apache License is a free software license written by the Apache Software Foundation (ASF). The Apache License requires preservation of the copyright notice and disclaimer. Like any free software license, the Apache License allows the user of the software the freedom to use the software for any purpose, to distribute it, to modify it, and to distribute modified versions of the software, under the terms of the license, without concern for royalties.
+
+[via Wikipedia](http://en.wikipedia.org/wiki/Apache_License)
