@@ -2,13 +2,13 @@
 
 ##What is it?
 
-Couch to WPPro is a tutorial series that covers WordPress Theme Development _for beginners_, and in this repository is the theme that we create during it.
+Couch to WPPro is a tutorial series on [YinPress](http://www.yinpress.com)that covers **WordPress Theme Development for beginners**, and in this repository is the theme that we create during it.
 
 ##Requirements
 
 To complete the series, you only need an internet connection and computer, and ideally some HTML and CSS knowledge, we cover the rest in the series. The theme, WPPro, is built using [Flatstrap](https://github.com/littlesparkvt/flatstrap), a take on [Twitter's Bootstrap](https://github.com/twitter/bootstrap) by [littlesparkvt](http://littlesparkvt.com). It's a more minimal approach
 
-![Couch to WP Pro Screenshot](http://www.yinpress.com/wp-content/uploads/2012/10/flatpress_layout.png)
+![Couch to WP Pro Screenshot](http://www.yinpress.com/wp-content/uploads/2013/04/c2wppro-screenshot.png)
 
 ##Beginner Tutorial Series
 
