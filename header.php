@@ -55,7 +55,7 @@
 ================================================== -->
 <header class="jumbotron subhead" id="overview">
   <div class="container">
-    <h1><?php bloginfo( 'name' ); ?></h1>
+    <h1><?php bloginfo( 'name' ); ?> Advanced</h1>
     <p class="lead"><?php bloginfo( 'description' ); ?></p>
   </div>
 </header>
