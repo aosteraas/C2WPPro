@@ -111,26 +111,13 @@
 	}
 	add_action( 'widgets_init' ,'wppro_sidebar_widgets' );
 	
-	
+// Custom WP Login Screen
+function wppro_custom_login_css() { 	
+echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/login.css" />'; 
+}   
+add_action('login_head', 'wppro_custom_login_css');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function wppro_login_logo_url( $url ) {     
+return get_bloginfo( 'url' ); 
+} 
+add_filter( 'login_headerurl', 'wppro_login_logo_url' );
