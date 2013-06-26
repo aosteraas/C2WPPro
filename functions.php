@@ -15,12 +15,16 @@
 	wp_register_style( 'docs', get_stylesheet_directory_uri().'/assets/css/docs.css');
 	wp_register_style( 'prettify', get_stylesheet_directory_uri().'/assets/js/google-code-prettify/prettify.css');
 	wp_register_style( 'our-css', get_stylesheet_directory_uri().'/assets/css/style.css');
+	wp_register_style( 'home', get_stylesheet_directory_uri().'/assets/css/home.css');
     //now we enqueue them
     wp_enqueue_style( 'bootstrap' );
     wp_enqueue_style( 'bootstrap-responsive' );
     wp_enqueue_style( 'docs' );
     wp_enqueue_style( 'prettify' );
     wp_enqueue_style( 'our-css' );
+    if (is_home()){
+    	wp_enqueue_style( 'home' );
+    }
  
     /////////////
     // JavaScript
@@ -29,9 +33,11 @@
     //First we register the scripts
     wp_register_script( 'jquery-flatstrap', get_stylesheet_directory_uri().'/assets/js/jquery.js', '', '1.8.1', true ); //true is to place it in the footer
     wp_register_script( 'collapse', get_stylesheet_directory_uri().'/assets/js/bootstrap-collapse.js', array( 'jquery-flatstrap' ), '2.3.1', true);
+    wp_register_script( 'bootstrap', get_stylesheet_directory_uri().'/assets/js/bootstrap.min.js','2.3.1','', true );
     //Now we enqueue them
     wp_enqueue_script('jquery-flatstrap');
     wp_enqueue_script( 'collapse');
+    wp_enqueue_script( 'bootstrap' );
 
 	}
 
@@ -121,3 +127,7 @@ function wppro_login_logo_url( $url ) {
 return get_bloginfo( 'url' ); 
 } 
 add_filter( 'login_headerurl', 'wppro_login_logo_url' );
+
+if (!is_page_template( 'home.php' )){
+	remove_filter( 'the_excerpt', 'wpautop' );
+}

@@ -32,7 +32,6 @@
     <script src="assets/js/bootstrap-tooltip.js"></script>
     <script src="assets/js/bootstrap-popover.js"></script>
     <script src="assets/js/bootstrap-button.js"></script>
-    <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
     <script src="assets/js/bootstrap-affix.js"></script>
     <script src="assets/js/application.js"></script>  -->
@@ -41,5 +40,14 @@
   <?php wp_footer(); ?>
   <!-- This is a LiveReload script, if you aren't using it you should be, http://livereload.com/ -->
   <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+    <?php if (is_home()){ ?>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $('.carousel').carousel({
+      interval: 5000  
+    })
+});
+</script>
+    <?php } ?>
   </body>
 </html>
