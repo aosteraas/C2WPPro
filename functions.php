@@ -128,6 +128,7 @@ return get_bloginfo( 'url' );
 } 
 add_filter( 'login_headerurl', 'wppro_login_logo_url' );
 
+//remove the automatic paragraph tags in the excerpt on the home page
 if (!is_page_template( 'home.php' )){
 	remove_filter( 'the_excerpt', 'wpautop' );
 }
