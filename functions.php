@@ -119,7 +119,7 @@
 	
 // Custom WP Login Screen
 function wppro_custom_login_css() { 	
-echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/login.css" />'; 
+echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/assets/css/login.css" />'; 
 }   
 add_action('login_head', 'wppro_custom_login_css');
 
