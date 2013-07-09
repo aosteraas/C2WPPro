@@ -43,7 +43,7 @@
     <?php if (is_home()){ ?>
 <script type="text/javascript">
 jQuery(document).ready(function($) {
-    $('.carousel').carousel({
+    $('.#myCarousel').carousel({
       interval: 5000  
     })
 });
