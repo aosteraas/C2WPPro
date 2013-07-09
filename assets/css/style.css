@@ -131,3 +131,9 @@ but need to be present in the stylesheet*/
 .search.page-header, .error404 .page-header, .archives.page-header {
 	margin-bottom: 0px;
 }
+
+/*Custom Homepage CSS*/
+
+body.home {
+	padding-top: 0;
+}
