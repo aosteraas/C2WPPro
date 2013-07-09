@@ -38,7 +38,6 @@
     wp_enqueue_script('jquery-flatstrap');
     wp_enqueue_script( 'collapse');
     wp_enqueue_script( 'bootstrap' );
-
 	}
 
 	//Adding our function wppro_script_enqueuer to the action wp_enqueue_scripts
@@ -132,3 +131,8 @@ add_filter( 'login_headerurl', 'wppro_login_logo_url' );
 if (!is_page_template( 'home.php' )){
 	remove_filter( 'the_excerpt', 'wpautop' );
 }
+
+//Post Thumbnails
+add_theme_support( 'post-thumbnails' ); 
+add_image_size('featured', 1550, 500); //images for the homepage
+add_image_size('featurette', 140, 140); //images for items below slider
