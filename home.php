@@ -1,10 +1,10 @@
 <?php get_header('home'); ?>
 
-  <body>
+  <body <?php body_class(); ?>>
 
 
 
-    <!-- NAVBAR
+   <!-- NAVBAR
     ================================================== -->
     <!-- Wrap the .navbar in .container to center it on the page and provide easy way to target it with .navbar-wrapper. -->
     <div class="container navbar-wrapper">
@@ -45,8 +45,8 @@
      while ($featured_query->have_posts() ) : 
             $featured_query->the_post();
     ?>
-     <div class="item active">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/examples/slide-03.jpg" alt="">
+    <div class="item active">
+    <?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'featured' ); } ?>
                 <div class="container">
       <div class="carousel-caption">
         <h1><?php the_title(); ?></h1>
@@ -69,7 +69,7 @@
            $featured_query->the_post();
   ?>
 <div class="item">
-  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/examples/slide-03.jpg" alt="">
+  <?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'featured' ); } ?>
   <div class="container">
     <div class="carousel-caption">
       <h1>
@@ -99,12 +99,13 @@
 
       <!-- Three columns of text below the carousel -->
       <div class="row">
-        <?php $featurettes = new WP_Query(array('posts_per_page' => 3));
+        <?php $featurettes = new WP_Query(array('posts_per_page' => 6));
         while ($featurettes->have_posts() ) :
                 $featurettes->the_post();
               ?>
         <div class="span4">
-          <img class="img-circle" src="http://placehold.it/140x140">
+          <?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'featurette' ); } ?>
+          <!-- <img class="img-circle" src="http://placehold.it/140x140"> -->
           <h2><?php the_title(); ?></h2>
           <p><?php the_excerpt(); ?></p>
           <p><a class="btn" href="<?php the_permalink();?>">View details &raquo;</a></p>
@@ -115,9 +116,8 @@
           ?>
       </div><!-- /.row -->
 
-
       <!-- START THE FEATURETTES -->
-
+<!-- 
       <hr class="featurette-divider">
 
       <div class="featurette">
@@ -142,8 +142,7 @@
         <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
       </div>
 
-      <hr class="featurette-divider">
+      <hr class="featurette-divider"> -->
 
       <!-- /END THE FEATURETTES -->
-
 <?php get_footer(); ?>
