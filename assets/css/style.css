@@ -137,3 +137,6 @@ but need to be present in the stylesheet*/
 body.home {
 	padding-top: 0;
 }
+.author-gravatar {
+	padding-right: 10px;
+}
