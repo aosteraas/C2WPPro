@@ -31,6 +31,9 @@
       </ul>
     </section>
     <!-- END POSTS NAVIGATION -->
+    <!-- BEGIN AUTHOR PROFILE -->
+      <?php get_template_part( 'author', 'single' ); ?>
+    <!-- END AUTHOR PROFILE -->
     <!-- BEGIN COMMENTS -->
     <section class="comments">
       <?php comments_template(); ?>
