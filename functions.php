@@ -87,9 +87,9 @@
 	      <?php comment_reply_link(array_merge( $args, array('depth' =>$depth, 'max_depth' => $args['max_depth']))) ?>
 	<?php }
 
-    //////////////////////////////////////////////////////////////////////////////////////
-    ///////////// Menus
-    //////////////////////////////////////////////////////////////////////////////////////	
+	//////////////////////////////////////////////////////////////////////////////////////
+	///////////// Menus
+	//////////////////////////////////////////////////////////////////////////////////////	
 
 	//Registering out menu as the header menu within a function
 	function wppro_menus() {
@@ -99,9 +99,9 @@
 	//Adding our function wppro_menus to the action init
 	add_action( 'init', 'wppro_menus' );
 
-    //////////////////////////////////////////////////////////////////////////////////////
-    ///////////// Sidebars
-    //////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////
+	///////////// Sidebars
+	//////////////////////////////////////////////////////////////////////////////////////
 	function wppro_sidebar_widgets(){
 		register_sidebar( array( 
 			'name'			=> 'Sidebar Widgets',
@@ -115,58 +115,48 @@
 		);
 	}
 	add_action( 'widgets_init' ,'wppro_sidebar_widgets' );
-	
-// Custom WP Login Screen
-function wppro_custom_login_css() { 	
-echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/assets/css/login.css" />'; 
-}   
-add_action('login_head', 'wppro_custom_login_css');
 
-function wppro_login_logo_url( $url ) {     
-return get_bloginfo( 'url' ); 
-} 
-add_filter( 'login_headerurl', 'wppro_login_logo_url' );
+	//////////////////////////////////////////////////////////////////////////
+	////////////Custom wp-login 
+	//////////////////////////////////////////////////////////////////////////
+	function wppro_custom_login_css() { 	
+	echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/assets/css/login.css" />'; 
+	}   
+	add_action('login_head', 'wppro_custom_login_css');
 
-//remove the automatic paragraph tags in the excerpt on the home page
-if (!is_page_template( 'home.php' )){
-	remove_filter( 'the_excerpt', 'wpautop' );
-}
+	function wppro_login_logo_url( $url ) {     
+	return get_bloginfo( 'url' ); 
+	} 
+	add_filter( 'login_headerurl', 'wppro_login_logo_url' );
 
-//Post Thumbnails
-add_theme_support( 'post-thumbnails' ); 
-add_image_size('featured', 1550, 500); //images for the homepage
-add_image_size('featurette', 140, 140); //images for items below slider
+	//remove the automatic paragraph tags in the excerpt on the home page
+	if (!is_page_template( 'home.php' )){
+		remove_filter( 'the_excerpt', 'wpautop' );
+	}
 
-//////////////////////////////////////////////////////////////////////////
-////////////Custom Author Profiles
-//////////////////////////////////////////////////////////////////////////
-function wppro_author_profile($user_contactmethods) {
-	
-	//use unset to remove the values we don't want
-	unset($user_contactmethods['aim']);
-	unset($user_contactmethods['yim']);
-	unset($user_contactmethods['jabber']);
+	//////////////////////////////////////////////////////////////////////////
+	////////////Post Thumbnails
+	//////////////////////////////////////////////////////////////////////////
+	add_theme_support( 'post-thumbnails' ); 
+	add_image_size('featured', 1550, 500); //images for the homepage
+	add_image_size('featurette', 140, 140); //images for items below slider
 
-	//adding additional contact methods
-	$user_contactmethods['twitter'] = 'Twitter';
-	$user_contactmethods['facebook'] = 'Facebook';
+	//////////////////////////////////////////////////////////////////////////
+	////////////Custom Author Profiles
+	//////////////////////////////////////////////////////////////////////////
+	function wppro_author_profile($user_contactmethods) {
+		
+		//use unset to remove the values we don't want
+		unset($user_contactmethods['aim']);
+		unset($user_contactmethods['yim']);
+		unset($user_contactmethods['jabber']);
 
-	//return the array for processing
-	return $user_contactmethods;
-}
+		//adding additional contact methods
+		$user_contactmethods['twitter'] = 'Twitter';
+		$user_contactmethods['facebook'] = 'Facebook';
 
-add_filter('user_contactmethods', 'wppro_author_profile');
+		//return the array for processing
+		return $user_contactmethods;
+	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+	add_filter('user_contactmethods', 'wppro_author_profile');
