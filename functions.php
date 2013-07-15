@@ -136,3 +136,37 @@ if (!is_page_template( 'home.php' )){
 add_theme_support( 'post-thumbnails' ); 
 add_image_size('featured', 1550, 500); //images for the homepage
 add_image_size('featurette', 140, 140); //images for items below slider
+
+//////////////////////////////////////////////////////////////////////////
+////////////Custom Author Profiles
+//////////////////////////////////////////////////////////////////////////
+function wppro_author_profile($user_contactmethods) {
+	
+	//use unset to remove the values we don't want
+	unset($user_contactmethods['aim']);
+	unset($user_contactmethods['yim']);
+	unset($user_contactmethods['jabber']);
+
+	//adding additional contact methods
+	$user_contactmethods['twitter'] = 'Twitter';
+	$user_contactmethods['facebook'] = 'Facebook';
+
+	//return the array for processing
+	return $user_contactmethods;
+}
+
+add_filter('user_contactmethods', 'wppro_author_profile');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
