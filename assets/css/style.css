@@ -140,3 +140,7 @@ body.home {
 .author-gravatar {
 	padding-right: 10px;
 }
+/*Archive Pages*/
+.author .post {
+	padding-top: 0;
+}
