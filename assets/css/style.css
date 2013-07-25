@@ -141,6 +141,7 @@ body.home {
 	padding-right: 10px;
 }
 /*Archive Pages*/
-.author .post {
+.author .post, .category .post {
 	padding-top: 0;
 }
+
