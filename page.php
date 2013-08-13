@@ -4,6 +4,8 @@
   <div class="span9">
   <?php while ( have_posts() ) : the_post(); ?>
   <section <?php post_class(); ?>>
+  <?php wppro_breadcrumbs( get_the_ID(); ) ?>
+
     <div class="page-header">
       <h1>
         <?php the_title(); ?>

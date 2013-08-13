@@ -160,3 +160,36 @@
 	}
 
 	add_filter('user_contactmethods', 'wppro_author_profile');
+
+	//////////////////////////////////////////////////////////////////////////
+	////////////Breadcrumbs
+	//////////////////////////////////////////////////////////////////////////
+
+	function wppro_breadcrumbs( $b_id ) {
+	global $wpbd; 
+	?>
+		<ul class="breadcrumb">
+		  <li><a href="<?php bloginfo('url') ?>">Home</a> <span class="divider">/</span></li>
+		  <?php
+		  if (is_single( $b_id )){
+			//Code for posts
+			$current_post = get_post( $b_id );
+			$category = get_the_category( $b_id );
+			?>
+			<li><a href="<?php bloginfo('url') ?>/category/<?php echo $category[0]->slug; ?>" alt="<?php echo $category[0]->category_nicename; ?>"><?php echo $category[0]->cat_name; ?></a> <span class="divider">/</span></li>
+			<li><?php echo get_the_title($b_id); ?></li>
+			<?php 
+		  }
+		  else {
+		  	//Code for pages
+		  	$current_post = get_post( $b_id );
+		  	if (!empty($current_post->post_parent)){ ?>
+		  	<li><a href="<?php echo get_permalink( $current_post->post_parent ); ?>"><?php echo get_the_title( $current_post->post_parent ); ?></a> <span class="divider">/</span></li>
+
+		  <?php } //end if has a parent
+		  ?>
+		  <li><?php echo get_the_title($b_id); ?></li>
+		  <?php }
+		  ?>
+		</ul><!-- END BREADCRUMBS -->
+	<?php } //end of wppro_breadcrumbs
