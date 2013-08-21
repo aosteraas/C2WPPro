@@ -23,6 +23,18 @@
   </section>
 
   <?php endwhile; ?>
+  <?php else: ?>
+
+<section>
+  <div class="page-header">
+    <h1>
+      Whoops!
+    </h1>
+  </div>
+    <p>No results have been found for your search, please try again!</p>
+</section>
+        
+
   <!-- START PAGINATION -->
     <section>
       <ul class="pager">
